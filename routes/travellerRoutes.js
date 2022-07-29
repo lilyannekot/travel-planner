@@ -1,14 +1,18 @@
 const { read } = require("fs");
+const traveller = require('express').Router();
+const { v4: uuidv4 } = require('uuid')
+const fs = require('fs');
 
-app.get('/api/travellers', (req, res) => {
-    readFromFile('./seeds/travellerSeedData.json').then((data) => 
+traveller.get('/api/travellers', (req, res) => {
+    fs.readFile('./seeds/travellerSeedData.json').then((data) => 
         res.json(JSON.parse(data))
     )
+    console.log(err)
 });
 
 
 app.post('/api/travellers', (req, res) => {
-    
+
 });
 
 
